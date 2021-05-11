@@ -1,7 +1,116 @@
-button {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+.app {
+    height: 100%;
+}
+.button {
     width: 160px;
     color:#fff;
     background-color: #f23005;
     padding: 20px 0;
     border: none;
+}
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 330px 1fr 330px;
+    grid-template-rows: 90px 1fr 130px;
+}
+.grid__item {
+    border: 3px solid crimson;
+}
+.grid__item:nth-child(1) {
+    grid-row: 1/3;
+}
+.grid__item:nth-child(3) {
+    grid-row: 1/3;
+    grid-column: 3/4;
+}
+.grid__item:nth-child(5) {
+    grid-column: 1/4;
+}
+.sidebar_left {
+    display: grid;
+    grid-template-rows: 90px;
+}
+.sidebar_left__header {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 35px 30px 40px 30px;
+}
+.sidebar_left__header span {
+    color: #f23005;
+}
+.sidebar_left__menu {
+    background-color: #151515;
+    padding: 30px;
+}
+.sidebar_left__menu-item {
+    display: flex;
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+.sidebar_left__menu-item img {
+    padding-right: 15px;
+}
+.sidebar_left__last {
+    padding-bottom: 60px;
+}
+.sidebar_left__line {
+    width: 50px;
+    height: 1px;
+    background-color: #f23005;
+}
+.sidebar_left__stat {
+    background-color: #151515;
+    padding: 0 30px;
+}
+.sidebar_left__stat-items {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+.sidebar_left__stat-head, .sidebar_left__stat-item {
+    text-transform: uppercase;
+    padding: 10px 0;;
+}
+.sidebar_left__stat-item:nth-child(even) {
+    color: #f23005;
+    grid-column: 2/3;
+    text-align: right;
+}
+.sidebar_left__stat-item:nth-child(odd) {
+    color: #6e6e6e;
+    grid-column: 1/2;
+}
+.music-header {
+    display: flex;
+    justify-content: space-between;
+}
+.music-header__image {
+    height: 90px;
+    width: 90px;
+    background: url(../img/music-face.png) top center;
+}
+.searchbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 25px;
+    background-color: #f23005;
+    min-width: 390px;
+}
+.searchbar-input {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+.searchbar-input::placeholder {
+    color: #fff;
 }

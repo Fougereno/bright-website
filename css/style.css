@@ -85,6 +85,21 @@ span {
     background-color: #f23005;  
     padding: 15px; 
 }
+.section_orange {
+    background-color: #f23005;
+    display: flex;
+    justify-content: center;
+}
+.section_orange__items {
+    display: flex;
+}
+.section_orange__item {
+    min-width: 270px;
+    text-align: center;
+}
+.section_orange__head {
+    font-size: 64px;
+}
 .sidebar_left {
     display: grid;
     grid-template-rows: 90px;

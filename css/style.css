@@ -45,7 +45,7 @@ body {
 .grid {
     height: 100vh;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 16% 68% 16%;
     grid-template-rows: auto;
 }
 .grid__item:nth-child(1) {
@@ -260,7 +260,6 @@ span {
 .sidebar_left {
     display: grid;
     grid-template-rows: 90px;
-    width: 300px;
 }
 .sidebar_left__header {
     text-transform: uppercase;

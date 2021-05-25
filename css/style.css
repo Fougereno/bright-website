@@ -7,7 +7,7 @@ body {
     color: white;
 }
 .app {
-    height: 100%;
+    min-height: 100%;
 }
 .button {
     display: flex;
@@ -43,7 +43,7 @@ body {
     grid-column: 1/3;
 }
 .grid {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 16% 68% 16%;
     grid-template-rows: auto;
@@ -258,14 +258,22 @@ span {
     margin: 0 auto;
 }
 .sidebar_left {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     grid-template-rows: 90px;
+    background-color: #151515;
 }
 .sidebar_left__header {
+    background-color: #000;
     text-transform: uppercase;
     font-size: 24px;
     font-weight: 600;
     padding: 35px 30px 40px 30px;
+}
+.sidebar_left__header_2 {
+    background-color: #000;
+    height: 90px;
 }
 .sidebar_left__header span {
     color: #f23005;
@@ -273,6 +281,7 @@ span {
 .sidebar_left__menu {
     background-color: #151515;
     padding: 30px;
+    margin-bottom:  auto;
 }
 .sidebar_left__menu-item {
     display: flex;
@@ -281,6 +290,7 @@ span {
 }
 .sidebar_left__menu-item img {
     padding-right: 15px;
+    height: 100%;
 }
 .sidebar_left__menu-text:hover {
     color: #f23005;
@@ -296,7 +306,8 @@ span {
 }
 .sidebar_left__stat {
     background-color: #151515;
-    padding: 0 30px;
+    padding: 0 30px 60px 30px;
+    justify-self: flex-end;
 }
 .sidebar_left__stat-items {
     display: grid;
@@ -319,6 +330,7 @@ span {
 .music-header {
     display: flex;
     justify-content: space-between;
+    height: 90px;
 }
 .music-header__left {
     display: flex;
@@ -365,8 +377,10 @@ span {
     color: #fff;
 }
 .albums {
+    background-color: #151515;
     padding: 30px;
-    display: grid;
+    display: grid;    
+    grid-column: 2/3;
     overflow: hidden;
 }
 .albums-item {
@@ -380,8 +394,8 @@ span {
     justify-items: center;
     align-items: center;
     grid-gap: 30px;
-    grid-template-columns: repeat(auto-fit, 300px);
-    grid-template-rows:  repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, 300px);
     padding-top: 30PX;
 }
 .album-img {
@@ -389,7 +403,8 @@ span {
     justify-content: center;
     width: 100%;
     height: auto;
-    max-height: 360px;
+    height: 360px;
+    background: url(../img/music\ band.png) no-repeat top center;
 }
 .album-img img {
     object-fit: cover;
@@ -406,6 +421,7 @@ span {
     flex-wrap: wrap;
     align-items: center;
     padding: 0 30px;
+    height: 120px;
 }
 .footer__img {    
     transition: transform;
@@ -458,6 +474,9 @@ span {
     .gray_small {
         width: 100px;
     }
+    .album-img {
+        background: url(../img/music\ band.png) no-repeat top left;
+    }
 }
 @media screen and (max-width: 1660px) {
     .laptop {
@@ -468,6 +487,9 @@ span {
     }
     .footer_gray {
         width: 400px;
+    }
+    .album-img {
+        display: none;
     }
 }
 @media screen and (max-width: 1280px) {

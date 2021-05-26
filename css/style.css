@@ -46,7 +46,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 16% 68% 16%;
-    grid-template-rows: auto;
+    grid-template-rows: max-content;;
 }
 .grid__item:nth-child(1) {
     grid-row: 1/3;
@@ -126,6 +126,7 @@ body {
  }
 .main__arrows img:hover {
     transform: scale(1.3);
+    cursor: pointer;
 }
 .arrow {
     padding-right: 14px;
@@ -270,6 +271,7 @@ span {
     font-size: 24px;
     font-weight: 600;
     padding: 35px 30px 40px 30px;
+    height: 90px;
 }
 .sidebar_left__header_2 {
     background-color: #000;
@@ -292,6 +294,10 @@ span {
     padding-right: 15px;
     height: 100%;
 }
+.sidebar_left__menu-text {
+    transition: color;
+    transition-duration: 0.5s;
+}
 .sidebar_left__menu-text:hover {
     color: #f23005;
     cursor: pointer;
@@ -311,8 +317,6 @@ span {
 }
 .sidebar_left__stat-items {
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(2, 1fr);
 }
 .sidebar_left__stat-head, .sidebar_left__stat-item {
     text-transform: uppercase;
@@ -388,6 +392,9 @@ span {
     width: 300px;
     height: 300px;  
 }
+.albums-item:hover {
+    cursor: pointer;
+}
 .albums-items {
     display: grid;
     justify-content: space-between;
@@ -452,6 +459,9 @@ span {
     border-radius: 30px;
     background-color: #292929;
 }
+.footer_gray:hover {
+    cursor: pointer;
+}
 .footer_orange {
     height: 100%;
     border-radius: 30px;
@@ -466,6 +476,7 @@ span {
 }
 .footer__img:hover {
     transform: scale(1.2);
+    cursor: pointer;
 }
 @media screen and (max-width: 1800px) {
     .footer_gray {
@@ -492,7 +503,24 @@ span {
         display: none;
     }
 }
+@media screen and (max-width: 1500px) {
+    .sidebar_left__header {
+        font-size: 20px;
+    }
+    .sidebar_left__menu-text {
+        font-size: 13px;
+    }
+}
 @media screen and (max-width: 1280px) {
+    .grid__item:nth-child(1), .grid__item:nth-child(3) {
+        grid-row: 2/3;
+    }
+    .music-header {
+        grid-column: 1/4;
+    }
+    .sidebar_left__header_2, .sidebar_left__header {
+        display: none;
+    }
     .laptop {
         background: url(../img/Laptop.png) no-repeat right top;
         background-size: contain;
@@ -500,13 +528,28 @@ span {
     .section_first {
         background: url(../img/background.png) no-repeat right center;
     }
+    .sidebar_left__stat-item:nth-child(even) {
+        grid-column: 1/3;
+        text-align: left;
+    }
 }
 @media screen and (max-width: 1150px) {
+    .sidebar_left__menu-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .sidebar_left__menu-item img {
+        padding: 0 0 15px 0;
+    }
     .footer {
         padding: 0 15px;
     }
     .gray_small, .footer__album {
         display: none;
+    }
+    .footer__line {
+        padding: 0 5px;
     }
     .footer_gray {
         width: 350px;
@@ -522,20 +565,58 @@ span {
         display: none;
     }
     .main {
-        padding: 0 30px;
+        padding: 0 15px;
+        grid-row: 2/5;
     }
     .section_first__grid {
         justify-content: center;
     }
+    .sidebar_left__stat {
+        display: none;
+    }
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 760px) {    
+    .sidebar_left__menu-item p {
+        display: none;
+    }
     .main h2 {
         font-size: 65px;
     }
-    
+    .section_guitar-image {
+        background: #151515 url(../img/guitar.png) no-repeat top center;
+        background-size: contain;
+    }
     .section_guitar__item {
         left: auto;
         padding: 0 15px;
+    }
+}
+@media screen and (max-width: 760px) { 
+    .searchbar {
+        min-width: auto;
+    }
+    .searchbar-input {
+        display: none;
+    }
+    .searchbar__inner {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 487px) {
+    .footer__text {
+        display: none;
+    }
+    .sidebar_left {
+        display: none;
+    }
+    .albums {
+        grid-column: 1/4;
+        padding: 10px;
+    }
+    .albums-item {
+        display: flex;
+        width: 270px;
+        height: 270px;
     }
 }
 @media screen and (max-width: 425px) {
@@ -557,6 +638,9 @@ span {
         flex-direction: column;
         padding: 15px 0;
         align-items: center;
+    }
+    .btn_inner {
+        padding: 10px 12px;
     }
     .orange-squares__text {
         max-width: 300px

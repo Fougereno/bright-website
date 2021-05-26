@@ -46,7 +46,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 16% 68% 16%;
-    grid-template-rows: max-content;;
+    grid-template-rows: 90px minmax(max-content, 1fr);
 }
 .grid__item:nth-child(1) {
     grid-row: 1/3;
